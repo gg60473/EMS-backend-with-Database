@@ -1,11 +1,11 @@
 const express = require("express");
-
-const app = express();
 const cors = require("cors");
+const app = express();
+const mongoose = require("mongoose");
 
 const employeeRoutes = require("./routes/employeeRoutes");
 
-const loggerMiddleware = require("./middleware/loggerMiddleware");
+const loggerMiddleware = require("./middleware/loggermiddleware");
 
 
 // Middleware
@@ -26,9 +26,17 @@ app.get("/", (req, res) => {
 
 });
 
+mongoose.connect("mongodb+srv://gg60473_db_user:Gaurav8933@cluster0.ggjvslp.mongodb.net/").then(() => {
+  
+  console.log("MongoDB Connected");
+}).catch((err) => {
+  console.log("MongoDB Connection Error: ", err);
+});
 
-app.listen(4000, () => {
+const PORT = process.env.PORT || 4000;
 
-  console.log("Server Running on Port 4000");
+app.listen(PORT, () => {
+
+  console.log(`Server Running on Port ${PORT}`);
 
 });

@@ -28,7 +28,7 @@ router.post("/", addEmployee);
 
 // UPDATE
 
-router.put("/:id", updateEmployee);
+router.put("/:id", updateEmployee); //dynamic routing
 
 
 // DELETE

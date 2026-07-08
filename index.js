@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 const employeeRoutes = require("./routes/employeeRoutes");
 
-const loggerMiddleware = require("./middleware/loggermiddleware");
+const loggerMiddleware = require("./middleware/loggerMiddleware");
 
 
 // Middleware
